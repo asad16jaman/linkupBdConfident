@@ -726,6 +726,25 @@
 .whatsapp-icon {
     margin: 0;
 }
+.see_all_btn{
+    background: green!important;
+    border: 0px!important;
+    border-radius: 0!important;
+    color: #fff!important;
+}
+
+.see_all_btn:hover{
+    background: #314d29 !important;
+   
+}
+
+@media only screen and (min-width: 768px) {
+    /* Nav Toggle Btn Hide Css */
+    #customToggleBtn{
+        visibility: hidden;
+    }
+}
+
 
     </style>
 <a href="https://wa.me/8801234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">

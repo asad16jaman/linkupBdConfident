@@ -11838,7 +11838,7 @@ function(ee, t) {
     if ($('.asProjectSlider .BenifitsSliderInit').length > 0) {
         $('.asProjectSlider .BenifitsSliderInit').slick({
             infinite: false,
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 2,
             speed: 900,
             dots: false,
@@ -11892,7 +11892,7 @@ function(ee, t) {
     if ($('.BenefitNd-SliderInit').length > 0) {
         $('.BenefitNd-SliderInit').slick({
             infinite: true,
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1,
             speed: 900,
             dots: false,

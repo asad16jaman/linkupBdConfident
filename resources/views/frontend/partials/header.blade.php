@@ -153,6 +153,16 @@
         font-size: 14px;
         white-space: nowrap;
     }
+    .companyName{
+        display:none;
+    }
+
+    @media (min-width: 992px) {
+        .companyName{
+            display:block;
+        }
+    }
+    
 
     /* Desktop styles */
     @media (min-width: 768px) {
@@ -163,6 +173,9 @@
             background: rgba(0, 0, 0, 0.9);
             transform: translateX(100%); */
         }
+
+        
+    
 
         .custom-center-menu.active {
             transform: translateX(0%);
@@ -187,7 +200,7 @@
     <div class="custom-logo">
         <a href="{{ route('index') }}">
             <img src="{{ $info->logo ? asset($info->logo) : asset('no.png') }}" alt="{{ $info->name ?? 'Company Logo' }}">
-            <span class="fw-bold text-white d-none d-md-inline">
+            <span class="fw-bold text-white d-none d-md-inline companyName">
                 {{ $info->company_name ?? 'Company Logo' }}
             </span>
         </a>
@@ -200,7 +213,7 @@
     </div>
 
     <!-- Center Menu -->
-    <div class="custom-center-menu" id="customCenterMenu">
+    <div class="custom-center-menu active" id="customCenterMenu">
         <ul>
             <li><a href="{{ route('index') }}">Home</a></li>
             <li>

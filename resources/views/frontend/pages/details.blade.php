@@ -44,7 +44,8 @@
         <img src="{{ asset($project->feature_image) }}" alt="Project Image"
           class="img-fluid w-100 h-100" style="object-fit: cover;" />
       </div>
-      <div class="col-md-6 d-flex flex-column justify-content-center bg-white p-4">
+      <!-- justify-content-center -->
+      <div class="col-md-6 d-flex flex-column bg-white p-4">
         <table class="table mb-0">
           <tbody>
             <tr>
@@ -64,7 +65,7 @@
               <td>{{$project->no_of_floor}}</td>
             </tr>
             <tr>
-              <td><i class="fa fa-building me-2 text-primary"></i> Apartment/Floors</td>
+              <td style="width: 170px;"><i class="fa fa-building me-2 text-primary"></i> Apartment</td>
               <td>{{$project->appartments}}</td>
             </tr>
             <tr>
@@ -85,16 +86,15 @@
   <div class="container">
     <div class="row gx-0 overflow-hidden rounded-3 shadow-lg" style="min-height: 400px; background-color: #fff;">
       <div class="col-md-6 d-flex flex-column  p-3 p-md-4">
-        <h4 class="fw-bold mb-4   ">
-          Features Details :
-        </h4>
-        <div class="smart-list p-4 " style="font-size: 15px; line-height: 1.9; color: #333; list-style-type: disc;">
-          {!!$project->features_details!!}
-        </div>
-        <h4 class="fw-bold">Flat Details :</h4>
+        <h4 class="fw-bold">Flat Details:</h4>
         <div class="smart-list p-4 " style="font-size: 15px; line-height: 1.9; color: #333; list-style-type: disc;">
           {!!$project->flat_details!!}
         </div>
+        <h4 class="fw-bold mb-4"> Features Details : </h4>
+        <div class="smart-list p-4 " style="font-size: 15px; line-height: 1.9; color: #333; list-style-type: disc;">
+          {!!$project->features_details!!}
+        </div>
+        
       </div>
       <!-- Image Column -->
       <div class="col-md-6 d-none d-md-block">

@@ -57,10 +57,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
                     News & Events Entry
                 </a>
-                <!-- <a class="nav-link {{ Route::is('blogs.index') ? 'active' : '' }} " href="{{ route('blogs.index') }}">
+                <a class="nav-link {{ Route::is('blogs.index') ? 'active' : '' }} " href="{{ route('blogs.index') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-blog"></i></div>
                     Blog Entry
-                </a> -->
+                </a>
                @if (Auth::user()->username == 'admin')
                 <a class="nav-link {{ Route::is('admin.registration') ? 'active' : '' }}"
                     href="{{ route('admin.registration') }}">

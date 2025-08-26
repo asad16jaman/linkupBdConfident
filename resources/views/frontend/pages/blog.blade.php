@@ -19,13 +19,13 @@
 
   .grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-bottom: 10px;
   }
 
   .card {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -141,13 +141,16 @@
 </style>
 
 @php
-$bannerImage = $chooseUs && $chooseUs->news_events_image
-? asset($chooseUs->news_events_image)
+$bannerImage = $chooseUs && $chooseUs->mission_image
+? asset($chooseUs->mission_image)
 : asset('no.png');
 @endphp
+
 <section class="banner" role="banner" aria-label="About Us Banner" style="background-image: url('{{ $bannerImage }}');">
   <h1 style="color: white;">News And Events</h1>
 </section>
+
+
 <div class="blog-event-container">
   {{-- News Section --}}
   <div>
@@ -157,18 +160,22 @@ $bannerImage = $chooseUs && $chooseUs->news_events_image
         @php
           $plainDesc = strip_tags($item->description);
           $words = explode(' ', $plainDesc);
-          $limitedDesc = implode(' ', array_slice($words, 0, 100)) . (count($words) > 100 ? '...' : '');
+          $limitedDesc = implode(' ', array_slice($words, 0, 15)) . (count($words) > 15 ? '...' : '');
         @endphp
         <a href="{{ route('blog.events.details', $item->id) }}" style="text-decoration: none;">
           <div class="card bg-color-{{ ($index % 4) + 1 }}">
             <img src="{{ asset($item->image) }}" alt="{{ $item->title }}">
             <div class="card-body">
-              <div class="card-type">{{ ucfirst($item->type) }}</div>
+              <div class="card-type" style="font-size:15px">{{ ucfirst($item->type) }}</div>
               <div class="card-date">{{ \Carbon\Carbon::parse($item->date)->format('d M, Y') }}</div>
-              <h3 class="card-title">{{ $item->title }}</h3>
-              <p class="card-desc">{{ $limitedDesc }}</p>
+              <h3 class="card-title" style="font-size:17px">{{ $item->title }}</h3>
+              <p class="card-desc" style="font-size:15px">{{ $limitedDesc }}</p>
+              <div style="display:flex;justify-content:end">
+                <button style="border: none;background: gray;font-size:15px">Read More</button>
+              </div>
             </div>
           </div>
+          
         </a>
       @endforeach
     </div>

@@ -5,6 +5,46 @@
 
 <br><br>
 <style>
+
+  .banner {
+    position: relative;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(2px); 
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+  .banner h1 {
+    position: relative;
+    font-size: 4.5rem;
+    z-index: 2;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+    max-width: 900px;
+    user-select: none;
+  }
+
   .blog-event-container {
     max-width: 1100px;
     margin: 50px auto;
@@ -22,13 +62,13 @@
 
   .grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-bottom: 10px;
   }
 
   .card {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -81,20 +121,38 @@
   .bg-color-3 { background: #6c5ce7; }
   .bg-color-4 { background: #e17055; }
 </style>
+
+@php
+$bannerImage = $chooseUs && $chooseUs->mission_image
+? asset($chooseUs->mission_image)
+: asset('no.png');
+@endphp
+
+<section class="banner" role="banner" aria-label="About Us Banner" style="background-image: url('{{ $bannerImage }}');">
+  <h1 style="color: white;">Blog Page</h1>
+</section>
+
+
+
+
 <div class="blog-event-container">
   {{-- News Section --}}
   <div>
-    <h2 class="section-title">Latest News</h2>
+    <h2 class="section-title">Latest Blogs</h2>
     <div class="grid-wrapper">
       @foreach ($vlogs as $index => $item)
   <a href="{{ route('blog.single.details', $item->id) }}" style="text-decoration: none;">
     <div class="card bg-color-{{ ($index % 4) + 1 }}">
       <img src="{{ asset($item->image) }}" alt="{{ $item->title }}">
       <div class="card-body">
-        <h3 class="card-title">{{ $item->title }}</h3>
+        <h3 class="card-title" style="font-size: 20px;">{{ substr($item->title,0,25) }}</h3>
         @php
-          $words = Str::words(strip_tags($item->description), 70, '...');
+          $words = Str::words(strip_tags($item->description), 20, '...');
         @endphp
+        <p style="font-size:16px;color:#fff">{{ $words }}</p>
+        <div style="display:flex;justify-content:end">
+            <button class="btn btn-primary">Read More</button>
+        </div>
       </div>
     </div>
   </a>

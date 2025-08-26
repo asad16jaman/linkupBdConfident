@@ -16,6 +16,7 @@ use App\Models\Project;
 use App\Models\Slider;
 use App\Models\Story;
 use App\Models\WhyChooseUs;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -24,14 +25,16 @@ class HomeController extends Controller
         $upcomingProjects = Project::where('status', 'upcoming')->latest()->get();
         $ongoingProjects  = Project::where('status', 'ongoing')->latest()->get();
         $completeProjects = Project::where('status', 'complete')->latest()->get();
-        $allProjects = Project::latest()->get();
+        $newsEvents = NewsEvent::take(3)->latest()->get();
+        $allProjects = Project::latest()->take(3)->get();
         $slider = Slider::latest()->get();
         $chooseUs = WhyChooseUs::first();
         $message = messageFromCeo::first();
-
         $whyChooseUsItems = WhyChooseUs::all();
         $ourStrengths = OurStrength::latest()->get();
         $stories = Story::latest()->get();
+        $lastOne = Blog::latest()->first();
+        $lastTow = Blog::latest()->skip(1)->take(2)->get();
         return view('frontend.pages.home', compact(
             'upcomingProjects',
             'ongoingProjects',
@@ -42,10 +45,14 @@ class HomeController extends Controller
             'stories',
             'whyChooseUsItems',
             'chooseUs',
-            'message'
+            'message',
+            'newsEvents',
+            'lastOne',
+            'lastTow'
         ));
     }
 
+   
 
     public function projectsByStatus(Request $request)
     {
@@ -136,11 +143,13 @@ class HomeController extends Controller
     }
     public function VlogSection()
     {
+        $chooseUs = WhyChooseUs::first();
         $vlogs = Blog::get();
-        return view('frontend.pages.blogSingle', compact('vlogs'));
+        return view('frontend.pages.blogSingle', compact('vlogs','chooseUs'));
     }
     public function blogsingleDetails($id)
     {
+        
         $item = Blog::findOrFail($id);
         return view('frontend.pages.single_vlog_details', compact('item'));
     }

@@ -17,6 +17,9 @@ use App\Http\Controllers\Admin\OurStrengthController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Models\NewsEvent;
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,11 +64,6 @@ Route::get('/blog-events/{id}', [HomeController::class, 'blogEventDetails'])->na
 Route::get('blog', [HomeController::class, 'VlogSection'])->name('vlog');
 
 Route::get('/blog/{id}', [HomeController::class, 'blogsingleDetails'])->name('blog.single.details');
-
-
-
-
-
 
     Route::group(['middleware' => 'guest'], function () {
         Route::get('/login', [AuthenticationController::class, 'login'])->name('login');
