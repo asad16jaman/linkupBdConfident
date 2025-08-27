@@ -145,7 +145,7 @@ $bannerImage = $chooseUs && $chooseUs->mission_image
     <div class="card bg-color-{{ ($index % 4) + 1 }}">
       <img src="{{ asset($item->image) }}" alt="{{ $item->title }}">
       <div class="card-body">
-        <h3 class="card-title" style="font-size: 20px;">{{ substr($item->title,0,25) }}</h3>
+        <h3 class="card-title" style="font-size: 18px;height: 60px">{{ $item->title }}</h3>
         @php
           $words = Str::words(strip_tags($item->description), 20, '...');
         @endphp

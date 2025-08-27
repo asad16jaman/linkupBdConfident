@@ -19,11 +19,13 @@ class SliderController extends Controller
     {
         $this->validate(\request(),
             [
+                'slogan' => 'required',
                 'image'       => 'required|mimes:png,jpg,jpeg,webp',
             ]);
         try {
             $slider = new Slider();
             $slider->add_by = Auth::user()->id;
+            $slider->slogan = $request->input('slogan');
             $slider->ip_address = $request->ip();
             if ($request->hasFile('image')) {
              $slider->image = $this->imageUpload($request, 'image', 'uploads/slider');
@@ -51,12 +53,14 @@ class SliderController extends Controller
         $this->validate(\request(),
         [
             'image'       => 'nullable|mimes:png,jpg,jpeg,webp',
+            'slogan' => 'required',
         ]);
 
         try {
             $slider = Slider::find($id);
             $slider->add_by = Auth::user()->id;
             $slider->ip_address = $request->ip();
+            $slider->slogan = $request->input('slogan');
             // Handle image uploads individually
             if ($request->hasFile('image')) {
              $slider->image = $this->imageUpload($request, 'image', 'uploads/slider');

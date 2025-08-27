@@ -129,6 +129,7 @@
         text-decoration: none;
         font-size: 16px;
         transition: color 0.3s;
+        padding: 9px 10px;
     }
 
     .custom-center-menu ul li a:hover {
@@ -215,19 +216,21 @@
     <!-- Center Menu -->
     <div class="custom-center-menu active" id="customCenterMenu">
         <ul>
-            <li><a href="{{ route('index') }}">Home</a></li>
+            <li><a href="{{ route('index') }}">HOME</a></li>
             <li>
-                <a href="{{ route('about') }}">About</a>
+                <a href="{{ route('about') }}">ABOUT</a>
                 <ul>
-                    <li><a href="{{ route('about') }}">About Us</a></li>
-                    <li><a href="{{ route('director') }}">Board of Directors</a></li>
-                    <li><a href="{{ route('management') }}">Management Team</a></li>
-                    <li><a href="{{ route('mission.vission') }}">Mission & Vision</a></li>
+                    
+                    <li><a href="{{ route('about') }}">ABOUT US</a></li>
+                    <li><a href="{{ route('director') }}">BOARD OF DIRECTORS</a></li>
+                    <li><a href="{{ route('management') }}">MANAGEMENT TEAM</a></li>
+                    <li><a href="{{ route('mission.vission') }}">MISSION & VISION</a></li>
                 </ul>
             </li>
-            <li><a href="{{ route('all.project') }}">Projects</a></li>
-            <li><a href="{{ route('event.show') }}">NEWS & Event</a></li>
-            <li><a href="{{ route('contact') }}">Contact US</a></li>
+            <li><a href="{{ route('all.project') }}">PROJECTS</a></li>
+            <li><a href="{{ route('event.show') }}">LATEST NEWS & EVENT</a></li>
+            <li><a href="{{ route('vlog') }}">LATEST BLOGS</a></li>
+            <li><a href="{{ route('contact') }}">CONTACT US</a></li>
         </ul>
     </div>
 </header>

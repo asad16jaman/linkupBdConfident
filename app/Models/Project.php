@@ -14,7 +14,7 @@ class Project extends Model
         'status',
         'type',
         'location',
-        'map',
+        'map_url',
         'video',
         'address',
         'land_area',

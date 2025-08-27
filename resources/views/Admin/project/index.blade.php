@@ -79,8 +79,13 @@
                                     </div>
                                     <div class="form-group mb-2">
                                         <label>Location On Map<span style="color:red">*</span></label>
-                                        <input type="url" name="map" value="{{ old('map') }}" placeholder="Location on map" class="form-control form-control-sm shadow-none">
-                                        @error('map') <span style="color:red">{{ $message }}</span> @enderror
+                                        <input type="url" name="map_url" value="{{ old('map_url') }}" placeholder="Location on map" class="form-control form-control-sm shadow-none">
+                                        @error('map_url') <span style="color:red">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <label>Flat Size<span style="color:red">*</span></label>
+                                        <input type="text" name="size" value="{{ old('size') }}" placeholder="Flat Size" class="form-control form-control-sm shadow-none">
+                                        @error('size') <span style="color:red">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
 

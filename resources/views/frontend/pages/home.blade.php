@@ -405,9 +405,11 @@
     background: rgb(7 82 118 / 98%);
     padding: 20px;
     border-radius: 12px;
-    width: calc(33.333% - 20px);
+    /* width: calc(33.333% - 20px);
     min-width: 280px;
-    max-width: 350px;
+    max-width: 350px; */
+    min-width: 280px;
+    width:32%;
     backdrop-filter: blur(6px);
     transition: 0.3s;
     cursor: pointer;
@@ -462,7 +464,7 @@
       <div class="md-message-content">
       <h2>Managing Director’s Message</h2>
       <p class="name-title">{{$message->title}}</p>
-      <p class="message-text">
+      <p class="message-text" style="color: black;">
         {{$message->description}}
       </p>
       </div>
@@ -490,7 +492,7 @@
 
     <!-- WHAT SETS US APART -->
     <div class="why-choose-section__right">
-      <h2>Why We're Different</h2>
+      <h2 style="font-size:30px;width:600">Why We're Different</h2>
       <div class="why-choose-section__strengths">
       @php
       $faIcons = [
@@ -533,7 +535,7 @@
     </div>
     <div class="row" style="padding: 34px 0px;">
     @foreach ($newsEvents as $event)
-    <div class="col-md-4">
+    <div class="col-md-4 col-12 col-lg-3">
       @php
       $plainDesc = strip_tags($event->description);
       $words = explode(' ', $plainDesc);
@@ -630,7 +632,7 @@
     const strengths = @json($ourStrengths->map(fn($s) => [
     'title' => $s->title,
     'description' => strip_tags($s->description)
-  ]));
+    ]));
 
     function openModal(index) {
     document.getElementById('modalTitle').innerText = strengths[index].title;

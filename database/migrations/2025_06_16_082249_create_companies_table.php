@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phone', 20);
             $table->string('email', 100);
             $table->string('address');
+            $table->text('map_url')->nullable();
             $table->string('facebook')->nullable();
             $table->string('linkdin')->nullable();
             $table->string('youtube')->nullable();

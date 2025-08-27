@@ -12,6 +12,7 @@ class CompanyProfileController extends Controller
     public function index()
     {
         $info = Company::first();
+        
         return view('Admin.company_profile', compact('info'));
     }
 
@@ -39,6 +40,7 @@ class CompanyProfileController extends Controller
             $info->facebook = $request->facebook;
             $info->youtube = $request->youtube;
             $info->instagram = $request->instagram;
+            $info->map_url = $request->map_url;
             $info->twitter = $request->twitter;
             $info->updated_by     = Auth::user()->id;
             $info->ip_address = $request->ip();

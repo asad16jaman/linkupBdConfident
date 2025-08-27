@@ -133,6 +133,18 @@
                                                 <span style="color: red">{{ $message }}</span>
                                                 @enderror
                                             </div>
+
+
+                                            <label for="map_url" class="col-sm-3 col-form-label">Map<span
+                                                    style="color:red">*</span></label>
+                                            <div class="col-sm-9">
+                                                <textarea name="map_url" rows="3" class="form-control form-control-sm shadow-none">{{ $info->map_url }}</textarea>
+                                                @error('map_url')
+                                                <span style="color: red">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+
+
                                             <label for="inputPassword" class="col-sm-3 col-form-label">Logo<span
                                                     style="color:red">*</span></label>
                                             <div class="col-sm-9">

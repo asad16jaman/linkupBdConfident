@@ -23,6 +23,22 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label for="" class="col-sm-3 col-form-label">Slogan<span
+                                                style="color:red">*</span></label>
+                                        <div class="col-sm-9">
+                                            <input value="{{ old('slogan',$slider->slogan ) }}" type="text" name="slogan" class="form-control shadow-none"
+                                                >
+                                            @error('slogan')
+                                            <span style="color: red">{{ $message }}</span>
+                                            @enderror
+
+                                           
+                                        </div>
+                                    </div>
+
+
                                     <div class="form-group row">
                                         <label for="inputPassword" class="col-sm-3 col-form-label">Image<span
                                                 style="color:red">*</span></label>

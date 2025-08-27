@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
@@ -25,7 +26,7 @@ class HomeController extends Controller
         $upcomingProjects = Project::where('status', 'upcoming')->latest()->get();
         $ongoingProjects  = Project::where('status', 'ongoing')->latest()->get();
         $completeProjects = Project::where('status', 'complete')->latest()->get();
-        $newsEvents = NewsEvent::take(3)->latest()->get();
+        $newsEvents = NewsEvent::take(4)->latest()->get();
         $allProjects = Project::latest()->take(3)->get();
         $slider = Slider::latest()->get();
         $chooseUs = WhyChooseUs::first();
@@ -51,8 +52,6 @@ class HomeController extends Controller
             'lastTow'
         ));
     }
-
-   
 
     public function projectsByStatus(Request $request)
     {
@@ -80,6 +79,7 @@ class HomeController extends Controller
     public function show($slug)
     {
         $project = Project::where('slug', $slug)->firstOrFail();
+        
         $galleryImages = Gallery::where('project_id', $project->id)->pluck('project_image');
 
         return view('frontend.pages.details', compact('project', 'galleryImages'));
@@ -127,7 +127,8 @@ class HomeController extends Controller
     public function Contact()
     {
         $chooseUs = WhyChooseUs::first();
-        return view('frontend.pages.contact', compact('chooseUs'));
+        $company = Company::first();
+        return view('frontend.pages.contact', compact('chooseUs','company'));
     }
     public function Event()
     {

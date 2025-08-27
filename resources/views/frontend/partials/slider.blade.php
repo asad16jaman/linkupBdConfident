@@ -11,6 +11,16 @@
       box-sizing: border-box;
     }
 
+    .sliderSlogan{
+      font-size: 55px;
+    margin-top: 91px;
+   
+    width: 297px;
+    margin-left: 73px;
+    color: #ffffff;
+    font-weight: 700;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #111;
@@ -67,7 +77,7 @@
       display: flex;
       flex-direction: row;
       /* gap: 20px; */
-          gap: 138%;
+          gap: 15%;
       z-index: 10;
       max-width: 250px;
     }
@@ -170,7 +180,7 @@
 
 
     /* ////Slider title section is hare */
-    .sliderTitle{
+    /* .sliderTitle{
       position: absolute;
     top: 13%;
     left: 6%;
@@ -182,7 +192,7 @@
           font-size: 55px;
           padding: 0px 30px;
           color: #fff;
-    }
+    } */
 
     @media screen and (max-width: 900px) {
       .category-panel {
@@ -225,12 +235,12 @@
     }
 
     @media screen and (max-width: 425px) {
-      .sliderTitle > h1{
+      /* .sliderTitle > h1{
               font-weight: 50;
         line-height: 35px;
         font-size: 20px;
         padding: 0px 10px;
-    }
+    } */
 
         .category-panel {
         top: 73%;
@@ -248,12 +258,22 @@
   </style>
 </head>
 
+<!-- <div class="slide  ($loop->index == 0) ? 'active' : '' }}">
+      <img src=" asset($item->image) }}" alt="Slide" />
+    </div> -->
+
 <body>
   <div class="slider-container">
     @foreach ($slider as $item)
-    <div class="slide active">
-      <img src="{{ asset($item->image) }}" alt="Slide" />
-    </div>
+    <div class="slide active" 
+             style="background-image: url('{{ asset($item->image) }}'); 
+                    background-size: cover; 
+                    background-position: center; 
+                    background-repeat: no-repeat;">
+                  <div class="sliderSlogan">
+                    {{ $item->slogan }}
+                  </div>
+        </div>
   @endforeach
 
     <div class="overlay"></div>
@@ -286,11 +306,11 @@
     ];
   @endphp
 
-    <div class="sliderTitle">
+    <!-- <div class="sliderTitle">
        <h1>
         DISCOVER<br>YOUR<br>DREAM<br>HOME
        </h1>
-    </div>
+    </div> -->
 
     <div class="category-panel">
       @foreach ($categories as $key => $card)

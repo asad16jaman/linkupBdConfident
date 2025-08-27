@@ -27,7 +27,7 @@ class ProjectController extends Controller
             'status'         => 'required',
             'type'           => 'required',
             'location'       => 'required',
-            'map'            => 'required',
+            'map_url'            => 'required',
             'address'        => 'required',
             'land_area'      => 'required',
             'no_of_floor'    => 'required',
@@ -35,6 +35,7 @@ class ProjectController extends Controller
             'no_of_parking'  => 'required',
             'flat_details'   => 'required',
             'features_details'   => 'required',
+            'size'           => 'required',
             'collection'     => 'required',
             'handover'       => 'required',
             'main_image'     => 'nullable|mimes:png,jpg,jpeg,webp',
@@ -57,7 +58,8 @@ class ProjectController extends Controller
             $project->status        = $request->status;
             $project->type          = $request->type;
             $project->location      = $request->location;
-            $project->map           = $request->map;
+            $project->map_url           = $request->map_url;
+            $project->size           = $request->size;
             $project->video         = $request->video;
             $project->address       = $request->address;
             $project->land_area     = $request->land_area;
@@ -112,9 +114,10 @@ class ProjectController extends Controller
                 'status'         => 'required',
                 'type'           => 'required',
                 'location'       => 'required',
-                'map'            => 'required',
+                'map_url'            => 'required',
                 'address'        => 'required',
                 'land_area'      => 'required',
+                'size'           => 'required',
                 'no_of_floor'    => 'required',
                 'appartments'    => 'required',
                 'no_of_parking'  => 'required',
@@ -146,10 +149,11 @@ class ProjectController extends Controller
             $project->status        = $request->status;
             $project->type          = $request->type;
             $project->location      = $request->location;
-            $project->map           = $request->map;
+            // $project->map           = $request->map;
             $project->video         = $request->video;
             $project->address       = $request->address;
             $project->land_area     = $request->land_area;
+            $project->size     = $request->size;
             $project->no_of_floor   = $request->no_of_floor;
             $project->appartments   = $request->appartments;
             $project->no_of_parking = $request->no_of_parking;
@@ -157,6 +161,7 @@ class ProjectController extends Controller
             $project->features_details  = $request->features_details;
             $project->collection    = $request->collection;
             $project->handover      = $request->handover;
+            $project->map_url =  $request->map_url;
 
             // Image uploads
             if ($request->hasFile('main_image')) {

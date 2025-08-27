@@ -193,7 +193,7 @@ $categories = [
                     <select name="status" id="status" style="width: 100%; height: 42px; padding: 0 14px; border-radius: 8px; border: none; background-color: #e9814c; color: white; font-weight: 600; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27%23fff%27 stroke-width=%272%27%3e%3cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M19 9l-7 7-7-7%27 /%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px 16px; transition: background-color 0.3s ease;"
                         onfocus="this.style.backgroundColor='#d26f32'"
                         onblur="this.style.backgroundColor='#e9814c'">
-                        <option value="">All Statuses</option>
+                        <option value="">All Status</option>
                         @foreach(['ongoing', 'complete', 'upcoming'] as $statusOption)
                             <option value="{{ $statusOption }}" {{ $currentStatus == $statusOption ? 'selected' : '' }}>
                                 {{ ucfirst($statusOption) }}

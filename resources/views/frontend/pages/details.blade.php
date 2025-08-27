@@ -76,6 +76,10 @@
               <td><i class="fa fa-calendar-alt me-2 text-primary"></i> Handover</td>
               <td>{{$project->handover}}</td>
             </tr>
+            <tr>
+              <td><i class="fa fa-calendar-alt me-2 text-primary"></i> Flat Size</td>
+              <td>{{ $project->size ?? "Not Set Yeat" }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -127,6 +131,7 @@
     </div>
   </div>
 </section>
+
 <!-- ✅ Booking Form -->
 
 @if(!empty($project->video))
@@ -151,7 +156,7 @@
 @endif
 <div class="container" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
     <iframe 
-        src="{!! $project->map !!}" 
+        src="{!! $project->map_url !!}" 
         frameborder="0" 
         style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" 
         allowfullscreen="" 

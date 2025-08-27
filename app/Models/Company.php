@@ -22,5 +22,12 @@ class Company extends Model
         'logo',
         'ip_address',
         'updated_by',
+        'map_url'
     ];
+
+    
+
+
+
+
 }
