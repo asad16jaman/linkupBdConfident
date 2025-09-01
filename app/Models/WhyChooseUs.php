@@ -16,6 +16,7 @@ class WhyChooseUs extends Model
         'news_events_image',
         'contact_head_image',
         'status_head_image',
+        'blog_head_img',
         'ip_address',
         'updated_by',
     ];

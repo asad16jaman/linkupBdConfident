@@ -141,8 +141,8 @@
 </style>
 
 @php
-$bannerImage = $chooseUs && $chooseUs->mission_image
-? asset($chooseUs->mission_image)
+$bannerImage = $chooseUs && $chooseUs->news_events_image
+? asset($chooseUs->news_events_image)
 : asset('no.png');
 @endphp
 

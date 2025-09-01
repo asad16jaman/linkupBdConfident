@@ -123,8 +123,8 @@
 </style>
 
 @php
-$bannerImage = $chooseUs && $chooseUs->mission_image
-? asset($chooseUs->mission_image)
+$bannerImage = $chooseUs && $chooseUs->blog_head_img
+? asset($chooseUs->blog_head_img)
 : asset('no.png');
 @endphp
 

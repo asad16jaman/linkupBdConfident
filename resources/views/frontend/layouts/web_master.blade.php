@@ -748,7 +748,7 @@
 
 
     </style>
-<a href="https://wa.me/8801234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/01679118170" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp whatsapp-icon"></i>
 </a>
     <script data-cfasync="false" src="{{asset('frontend/js/email-decode.min.js')}}"></script>

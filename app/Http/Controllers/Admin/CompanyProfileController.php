@@ -80,6 +80,7 @@ class CompanyProfileController extends Controller
             'news_events_image' => 'nullable|mimes:png,jpg,jpeg,svg',
             'contact_head_image' => 'nullable|mimes:png,jpg,jpeg,svg',
             'status_head_image' => 'nullable|mimes:png,jpg,jpeg,svg',
+            'blog_head_img' => 'nullable|mimes:png,jpg,jpeg,svg',
         ]
     );
 
@@ -109,6 +110,10 @@ class CompanyProfileController extends Controller
         }
         if ($request->hasFile('news_events_image')) {
             $chooseUs->news_events_image = $this->imageUpload($request, 'news_events_image', 'uploads/events');
+        }
+
+        if ($request->hasFile('blog_head_img')) {
+            $chooseUs->blog_head_img = $this->imageUpload($request, 'blog_head_img', 'uploads/blog');
         }
 
         if ($request->hasFile('contact_head_image')) {
