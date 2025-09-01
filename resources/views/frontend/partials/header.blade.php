@@ -89,8 +89,8 @@
         top: 5px;
         right: 50px;
         width: 70%;
-        opacity: 0;
-        transform: translateX(100%);
+        /* opacity: 0; */
+        /* transform: translateX(100%); */
         transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
         z-index: 998;
         display: flex;
@@ -169,6 +169,8 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
+        
     }
     
      @media (max-width: 992px) {
@@ -192,6 +194,10 @@
             border-bottom: 1px dotted;
             width: 100%;
             text-align: center;
+        }
+        .custom-center-menu {
+            opacity: 0; 
+        transform: translateX(100%);
         }
      }
      @media (min-width: 1200px) {
@@ -220,12 +226,13 @@
 
     <!-- Toggle Button -->
     <div class="custom-menu-toggle" id="customToggleBtn">
-        <div class="custom-hamburger">&#9776;</div>
         <div class="custom-close-icon">&times;</div>
+        <div class="custom-hamburger">&#9776;</div>
     </div>
 
     <!-- Center Menu -->
-    <div class="custom-center-menu active" id="customCenterMenu">
+     <!-- active -->
+    <div class="custom-center-menu" id="customCenterMenu">
         <ul>
             <li><a href="{{ route('index') }}">HOME</a></li>
             <li>

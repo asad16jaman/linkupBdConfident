@@ -138,6 +138,21 @@
     font-weight: 700;
     position: relative;
   }
+
+  @media (max-width:768px){
+
+    .grid-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
+  @media (max-width:425px){
+    .grid-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
 </style>
 
 @php

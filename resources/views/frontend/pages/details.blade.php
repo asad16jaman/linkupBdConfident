@@ -73,13 +73,14 @@
               <td>{{$project->no_of_parking }}</td>
             </tr>
             <tr>
-              <td><i class="fa fa-calendar-alt me-2 text-primary"></i> Handover</td>
-              <td>{{$project->handover}}</td>
-            </tr>
-            <tr>
               <td><i class="fa fa-calendar-alt me-2 text-primary"></i> Flat Size</td>
               <td>{{ $project->size ?? "Not Set Yeat" }}</td>
             </tr>
+            <tr>
+              <td><i class="fa fa-calendar-alt me-2 text-primary"></i> Handover</td>
+              <td>{{$project->handover}}</td>
+            </tr>
+            
           </tbody>
         </table>
       </div>

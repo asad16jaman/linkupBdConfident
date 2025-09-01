@@ -449,6 +449,17 @@
       text-align: center;
     }
     }
+
+    @media (max-width:425px){
+    .mb-sm-3{
+      margin-bottom: 20px;
+    }
+    .mt-sm-3{
+      margin-top: 20px;
+    }
+  }
+
+
   </style>
 
   <div class="why-choose-section">
@@ -535,7 +546,7 @@
     </div>
     <div class="row" style="padding: 34px 0px;">
     @foreach ($newsEvents as $event)
-    <div class="col-md-4 col-12 col-lg-3">
+    <div class="col-md-4 col-12 col-lg-3 mb-sm-3">
       @php
       $plainDesc = strip_tags($event->description);
       $words = explode(' ', $plainDesc);
@@ -574,7 +585,7 @@
       <img src="{{ asset($lastOne->image) }}" class="" alt="{{ $lastOne->title }}" style="width:100%;height: 500px;object-fit: cover;">
     </div>
     <div class="col-md-6">
-      <div>
+      <div class="mt-sm-3">
         @php
           $plainaboutDesc = strip_tags($lastOne->description);
           $words = explode(' ', $plainaboutDesc);

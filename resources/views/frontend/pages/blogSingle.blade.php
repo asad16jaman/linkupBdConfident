@@ -120,6 +120,23 @@
   .bg-color-2 { background: #00cec9; }
   .bg-color-3 { background: #6c5ce7; }
   .bg-color-4 { background: #e17055; }
+
+  @media (max-width:768px){
+
+    .grid-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
+  @media (max-width:425px){
+    .grid-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+
+
 </style>
 
 @php
