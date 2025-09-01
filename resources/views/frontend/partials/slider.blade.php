@@ -205,6 +205,7 @@
       .category-box {
         padding-left: 60px;
         font-size: 16px;
+        margin-top:7px
       }
     }
 
@@ -242,8 +243,12 @@
         padding: 0px 10px;
     } */
 
+        .sliderSlogan{
+          font-size:40px
+        }
+
         .category-panel {
-        top: 73%;
+        top: 80%;
         left: 50px;
         transform: translateY(-50%);
         display: flex;

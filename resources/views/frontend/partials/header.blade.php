@@ -84,27 +84,24 @@
     .custom-menu-toggle.active .custom-close-icon {
         opacity: 1;
     }
-.custom-center-menu {
-    position: fixed;
-    top: 5px;
-    right: 0;
-    width: 70%;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
-    z-index: 998;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
+    .custom-center-menu {
+        position: fixed;
+        top: 5px;
+        right: 50px;
+        width: 70%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+        z-index: 998;
+        display: flex;
+        justify-content: end;
+        padding: 20px 0;
+    }
 
-.custom-center-menu.active {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-
-
+    .custom-center-menu.active {
+        transform: translateX(0);
+        opacity: 1;
+    }
     .custom-center-menu.active {
         transform: translateX(0);
         opacity: 1;
@@ -159,34 +156,13 @@
     }
 
     @media (min-width: 992px) {
-        .companyName{
-            display:block;
-        }
-    }
-    
-
-    /* Desktop styles */
-    @media (min-width: 768px) {
-        .custom-center-menu {
-            /* top: 70px;
-            right: 0;
-            width: auto;
-            background: rgba(0, 0, 0, 0.9);
-            transform: translateX(100%); */
-        }
-
-        
-    
-
         .custom-center-menu.active {
             transform: translateX(0%);
         }
-
         .custom-center-menu ul {
             flex-direction: row;
             gap: 30px;
         }
-
         .custom-center-menu ul li ul {
             position: absolute;
             top: 120%;
@@ -194,6 +170,41 @@
             transform: translateX(-50%);
         }
     }
+    
+     @media (max-width: 992px) {
+        .custom-center-menu{
+            background: black;
+            right:0px;
+            top:70px
+        }
+        .custom-center-menu ul{
+                background: black;
+                width: 100%;
+            }
+
+        .custom-center-menu ul li a {
+            
+            padding: 15px 10px;
+            display: inline-block;
+        }
+        .custom-center-menu ul li{
+            
+            border-bottom: 1px dotted;
+            width: 100%;
+            text-align: center;
+        }
+     }
+     @media (min-width: 1200px) {
+        .companyName{
+            display:block;
+        }
+     }
+     @media (min-width: 993px) and (max-width: 1199px) {
+            .custom-center-menu ul li a {
+                font-size: 12px;
+                padding: 9px 5px;
+            }
+        }
 </style>
 
 <header class="custom-header">
@@ -218,9 +229,8 @@
         <ul>
             <li><a href="{{ route('index') }}">HOME</a></li>
             <li>
-                <a href="{{ route('about') }}">ABOUT</a>
+                <a type="button">ABOUT</a>
                 <ul>
-                    
                     <li><a href="{{ route('about') }}">ABOUT US</a></li>
                     <li><a href="{{ route('director') }}">BOARD OF DIRECTORS</a></li>
                     <li><a href="{{ route('management') }}">MANAGEMENT TEAM</a></li>

@@ -231,9 +231,9 @@ $bannerImage = $chooseUs && $chooseUs->contact_head_image
                             <div class="col-md-2">
                                 <div class="right_conatct_social_icon d-flex align-items-end">
                                     <div class="socil_item_inner d-flex">
-                                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="{{ $info->facebook }}"><i class="fab fa-facebook-square"></i></a></li>
+                                        <li><a href="{{ $info->	instagram }}"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="{{ $info->twitter }}"><i class="fab fa-twitter"></i></a></li>
                                     </div>
                                 </div>
                             </div>

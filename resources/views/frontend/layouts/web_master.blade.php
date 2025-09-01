@@ -133,6 +133,7 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//use.fontawesome.com">
     <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="icon" type="image/png" href="{{ $info->logo ? asset($info->logo) : asset('no.png') }}">
     <style id="wp-emoji-styles-inline-css" type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -738,7 +739,7 @@
    
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
     /* Nav Toggle Btn Hide Css */
     #customToggleBtn{
         visibility: hidden;

@@ -27,7 +27,7 @@ class HomeController extends Controller
         $ongoingProjects  = Project::where('status', 'ongoing')->latest()->get();
         $completeProjects = Project::where('status', 'complete')->latest()->get();
         $newsEvents = NewsEvent::take(4)->latest()->get();
-        $allProjects = Project::latest()->take(3)->get();
+        $allProjects = Project::latest()->get();
         $slider = Slider::latest()->get();
         $chooseUs = WhyChooseUs::first();
         $message = messageFromCeo::first();
@@ -68,12 +68,10 @@ class HomeController extends Controller
         if ($request->filled('location')) {
             $query->where('location', $request->location);
         }
-
         $projects = $query->latest()->get();
         $chooseUs = WhyChooseUs::first();
         $types = Project::select('type')->distinct()->pluck('type');
         $locations = Project::select('location')->distinct()->pluck('location');
-
         return view('frontend.pages.status', compact('projects', 'chooseUs', 'types', 'locations', 'currentStatus'));
     }
     public function show($slug)
