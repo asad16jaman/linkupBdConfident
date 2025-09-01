@@ -195,6 +195,28 @@
     font-weight: 700;
     position: relative;
   }
+
+  @media (max-width:850px){
+    .contact_field {
+        padding: 335px 21px 28px 18px;
+    }
+
+    .contact_info_sec {
+        right: -25px;
+        top: 0%;
+    }
+  }
+
+  @media (max-width:500px){
+    .contact_field {
+        padding: 335px 21px 28px 18px;
+    }
+
+    .contact_info_sec {
+        right: -25px;
+        top: 0%;
+    }
+  }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
